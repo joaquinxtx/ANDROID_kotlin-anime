@@ -2,6 +2,7 @@ package com.example.chainsawman
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.chainsawman.adapter.CharacterAdapter
@@ -14,10 +15,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initRecycleView()
+
     }
     private fun initRecycleView(){
 
         binding.recyclerView.layoutManager=LinearLayoutManager(this)
         binding.recyclerView.adapter=CharacterAdapter(CharacterProvider.characterList)
     }
+
 }

@@ -7,9 +7,18 @@ import com.example.chainsawman.R
 
 class CharacterAdapter(private val characterList: List<com.example.chainsawman.Character>) :
     RecyclerView.Adapter<CharacterViewHolder>() {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharacterViewHolder {
+        val layoutInflater = LayoutInflater.from(parent.context)
+        return CharacterViewHolder(layoutInflater.inflate(R.layout.item_character, parent, false))
+    }
+
     override fun onBindViewHolder(holder: CharacterViewHolder, position: Int) {
         val item = characterList[position]
         holder.render(item)
+
+
+
 
     }
 
@@ -17,8 +26,4 @@ class CharacterAdapter(private val characterList: List<com.example.chainsawman.C
         return characterList.size
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharacterViewHolder {
-        val layoutInflater = LayoutInflater.from(parent.context)
-        return CharacterViewHolder(layoutInflater.inflate(R.layout.item_character, parent, false))
-    }
 }
